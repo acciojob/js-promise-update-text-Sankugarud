@@ -6,15 +6,13 @@
           }, 1000);
         });
       }
-
-      function setText(elementId, text) {
-        const element = document.getElementById(elementId);
-        if (element) {
+     updateOutput().then((result) => {
+        setText(result);
+      });
+      function setText(text) {
+        const element = document.getElementById('output');
           element.textContent = text;
-        }
       }
 
-      // Call the updateOutput function and update the element text after the promise resolves
-      updateOutput().then((result) => {
-        setText("output", result);
-      });
+      
+      
